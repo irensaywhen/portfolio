@@ -1,11 +1,11 @@
-import Nav from './Nav';
+import Header from './header/Header';
 
 const Layout = ({ children }) => {
   return (
-    <>
-      <Nav />
-      <main className='container mx-auto'>{children}</main>
-    </>
+    <div className='bg-secondary-20'>
+      <Header />
+      <main className='container mx-auto px-4'>{children}</main>
+    </div>
   );
 };
 

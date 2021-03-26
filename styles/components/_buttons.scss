@@ -1,0 +1,12 @@
+.btn {
+  @apply font-serif font-bold focus:outline-none;
+}
+
+.btn-sm {
+  @apply py-1 px-4;
+}
+
+// Primary button
+.btn-primary {
+  @apply bg-primary-default text-secondary-20   hover:bg-primary-dark;
+}
