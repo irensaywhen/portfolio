@@ -2,6 +2,10 @@ module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: false,
   theme: {
+    fontFamily: {
+      serif: ['BioRhyme', 'Podkova', 'serif'],
+      sans: ['Inter', 'sans-serif'],
+    },
     extend: {
       colors: {
         primary: {
