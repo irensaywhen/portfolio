@@ -1,0 +1,28 @@
+.benefit {
+  display: flex;
+
+  &:nth-of-type(n) {
+    flex-direction: column-reverse;
+  }
+
+  @include screen-md {
+    justify-content: space-between;
+    align-items: center;
+
+    &:nth-of-type(n) {
+      flex-direction: row;
+
+      p {
+        @apply md:pl-0;
+      }
+    }
+
+    &:nth-of-type(2n) {
+      flex-direction: row-reverse;
+
+      p {
+        @apply md:pl-8;
+      }
+    }
+  }
+}

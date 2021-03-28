@@ -2,4 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'utilities/mixins';
+@import 'utilities/defaults';
+
 @import 'components/buttons';
+@import 'components/menu';
+
+@import 'elements/benefit';

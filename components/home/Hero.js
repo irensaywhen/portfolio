@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <div className='min-h-screen flex flex-col justify-center'>
       <div className='h-100 lg:w-2/3 xl:w-1/2'>
-        <h1 className='font-serif text-3xl sm:text-4xl font-bold'>
+        <h1 className='text-3xl sm:text-4xl font-bold'>
           I’m a web developer.<br></br> I help businesses get clients through
           evaluating their online presence.
         </h1>
