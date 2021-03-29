@@ -22,6 +22,9 @@ module.exports = {
           100: '#000',
         },
       },
+      boxShadow: {
+        secondary: '-8px 16px 0px 0px #2b2b2b',
+      },
     },
   },
   variants: {

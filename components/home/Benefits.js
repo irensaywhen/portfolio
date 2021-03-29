@@ -15,10 +15,8 @@ const Benefits = () => {
     <Benefit key={index} benefit={benefit} />
   ));
   return (
-    <section className='text-center md:text-left'>
-      <h2 className='text-2xl sm:text-3xl font-bold mb-10 md:mb-16 md:text-center'>
-        Why would you care?
-      </h2>
+    <section className='text-center md:text-left py-10'>
+      <h2 className='mb-10 md:mb-16'>Why would you care?</h2>
       {benefitsList}
     </section>
   );

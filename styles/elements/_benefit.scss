@@ -5,6 +5,10 @@
     flex-direction: column-reverse;
   }
 
+  &:last-of-type {
+    margin-bottom: 0 !important;
+  }
+
   @include screen-md {
     justify-content: space-between;
     align-items: center;
