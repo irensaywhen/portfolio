@@ -1,8 +1,7 @@
 .menu {
-  @apply absolute flex justify-center items-center shadow-md rounded-full h-12;
+  @apply flex justify-center items-center shadow-md rounded-full h-12;
   // @include ease-out;
   max-width: 3rem;
-  right: 1rem;
   z-index: 1000;
   background: #fff;
   padding: 0.5rem 1rem;
