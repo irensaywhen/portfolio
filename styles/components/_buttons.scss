@@ -23,4 +23,30 @@
 }
 
 .btn-light {
+  @include ease-out;
+  @apply border-secondary-80;
+  &.btn-sm {
+    @apply pb-0 mx-2 px-2;
+  }
+
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+
+  clip-path: polygon(
+    calc(0% + 2px) calc(0% + 2px),
+    /* top left */ calc(100% - 2px) calc(0% + 2px),
+    /* top right */ calc(100% - 2px) calc(100% - 2px),
+    /* bottom right */ calc(0% + 2px) calc(100% - 2px) /* bottom left */
+  );
+
+  &:hover,
+  &:active,
+  &.active {
+    @include ease-out;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.btn-light-social {
+  @apply text-secondary-80 bg-transparent  hover:text-secondary-100;
 }

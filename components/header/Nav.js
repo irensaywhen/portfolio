@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ActiveLink from '../ActiveLink';
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,17 +11,28 @@ const Nav = () => {
   const menuItems = isMenuOpen ? (
     <ul className='menu-items'>
       <li>
-        <a href='#' className='btn btn-sm btn-light'>
-          what I do
+        <ActiveLink activeClassName='active' href='/'>
+          <a className='btn btn-sm btn-light'>что я делаю?</a>
+        </ActiveLink>
+      </li>
+      <li>
+        <button className='btn btn-sm btn-light'>обсудить проект</button>
+      </li>
+      <li>
+        <a
+          href='https://github.com/irensaywhen'
+          className='btn btn-sm btn-light-social'
+        >
+          <i class='fab fa-github'></i>
         </a>
       </li>
       <li>
-        <a href='' className='btn btn-sm btn-light'>
-          my work
+        <a
+          href='https://twitter.com/IrenSayWhen'
+          className='btn btn-sm btn-light-social'
+        >
+          <i class='fab fa-twitter'></i>
         </a>
-      </li>
-      <li>
-        <button className='btn btn-sm btn-light'>contact</button>
       </li>
     </ul>
   ) : null;
