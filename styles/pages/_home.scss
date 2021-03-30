@@ -1,0 +1,38 @@
+.home-projects {
+  .project-preview {
+    justify-content: flex-start;
+    // Show button only on hover
+    @include screen-sm {
+      .btn {
+        @include ease-out;
+        opacity: 0;
+      }
+
+      &:hover,
+      &:focus {
+        .btn {
+          opacity: 1;
+        }
+      }
+    }
+
+    // Project description
+    .description {
+      @include screen-sm {
+        position: absolute;
+        max-width: 550px;
+        top: 50%;
+        left: 30%;
+        transform: translateY(-50%);
+      }
+
+      @include screen-lg {
+        left: 20%;
+      }
+
+      @media screen and (min-width: 1124px) {
+        left: 30%;
+      }
+    }
+  }
+}
