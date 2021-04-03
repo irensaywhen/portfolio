@@ -26,20 +26,21 @@ const FullscreenNav = ({ isMenuOpen, handleCloseMenu }) => {
         <ul className='flex flex-col items-center justify-center'>
           <li className='pb-2'>
             <ActiveLink activeClassName='active' href='/'>
-              <a className='btn btn-light text-2xl'>what I do?</a>
+              <a className='btn btn-light text-2xl px-3'>what I do?</a>
             </ActiveLink>
           </li>
           <li className='pb-2'>
-            <a href='https://irensays.blog/' className='btn btn-light text-2xl'>
-              blog
+            <a
+              href='https://irensays.blog/'
+              className='btn btn-light px-3 text-2xl'
+            >
+              my blog
             </a>
           </li>
-          <li className='pb-2'>
+          <li>
             <button className='btn btn-default btn-light-social'>
               <i className='fas fa-envelope'></i>
             </button>
-          </li>
-          <li>
             <a
               href='https://github.com/irensaywhen'
               className='btn btn-default btn-light-social'
