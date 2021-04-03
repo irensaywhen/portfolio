@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <>
       <header className='w-full py-2 fixed top-0 bg-transparent z-50'>
-        <div className='container mx-auto px-4 sm:px-8 md:px-12 max-w-screen-xl flex justify-between'>
+        <div className='container mx-auto px-4 sm:px-8 md:px-12 max-w-screen-xl flex justify-between items-center'>
           <Logo />
           <Nav handleOpenMenu={handleOpenMenu} />
         </div>

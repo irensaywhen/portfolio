@@ -5,28 +5,6 @@ import { CopyEmailContext } from '../../context/copy-email';
 
 const Nav = ({ handleOpenMenu }) => {
   const copyEmailContext = useContext(CopyEmailContext);
-  //  console.log(copyEmailContext);
-  // const [emailCopied, setIsEmailCopied] = useState(false);
-
-  // const resetTooltipHandler = () => setIsEmailCopied(false);
-
-  // const copyEmailHandler = () => {
-  //   setIsEmailCopied(true);
-  //   // As long as Clipborad API is not widely supported
-  //   // I decided to use old approach which includes
-  //   // creating an input element and calling document.execCommand function
-  //
-  //   var dummy = document.createElement('input');
-  //
-  //   document.body.appendChild(dummy);
-  //
-  //   dummy.setAttribute('value', 'irensaywhen@gmail.com');
-  //   dummy.select();
-  //
-  //   document.execCommand('copy');
-  //
-  //   document.body.removeChild(dummy);
-  // };
 
   console.log(copyEmailContext);
 
@@ -55,14 +33,9 @@ const Nav = ({ handleOpenMenu }) => {
   );
 
   return (
-    <div className='menu w-12 lg:w-auto'>
+    <div className='menu w-12 sm:w-auto'>
       {reactTooltip}
-      <ul className='menu-items hidden lg:flex justify-start items-center'>
-        <li className='pl-2'>
-          <ActiveLink activeClassName='active' href='/'>
-            <a className='btn btn-sm btn-light'>what I do?</a>
-          </ActiveLink>
-        </li>
+      <ul className='menu-items hidden sm:flex justify-start items-center'>
         <li>
           <button
             className='btn btn-sm btn-light-social'
@@ -85,7 +58,7 @@ const Nav = ({ handleOpenMenu }) => {
             <i className='fab fa-github'></i>
           </a>
         </li>
-        <li>
+        <li className='pr-2'>
           <a
             href='https://twitter.com/IrenSayWhen'
             className='btn btn-sm btn-light-social'
