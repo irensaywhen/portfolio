@@ -47,6 +47,27 @@
   }
 }
 
+.btn-light-revert {
+}
+
 .btn-light-social {
   @apply text-secondary-80 bg-transparent  hover:text-secondary-100;
+
+  i {
+    font-size: 1.25rem;
+  }
+}
+
+.btn-light-social-revert {
+  @apply text-secondary-20 bg-transparent  hover:text-secondary-0;
+
+  i {
+    font-size: 1.25rem;
+  }
+
+  &.btn-default {
+    i {
+      font-size: 1.75rem;
+    }
+  }
 }

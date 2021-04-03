@@ -1,112 +1,74 @@
 .menu {
   @apply flex justify-center items-center shadow-md rounded-full h-12;
-  // @include ease-out;
-  max-width: 3rem;
+  @include ease-out;
+  // max-width: 3rem;
   z-index: 1000;
   background: #fff;
   padding: 0.5rem 1rem;
 
-  .menu-items {
-    @apply flex justify-start items-center;
-    @include ease-out;
-    // position: absolute;
-    // left: 9999px;
-    // opacity: 0;
-
-    .btn-light-social {
-      i {
-        font-size: 1.25rem;
-      }
-    }
-  }
-
   .menu-btn {
     @include ease-out;
-    // position: absolute;
-    // top: 50%;
-    // right: 10px;
-    // transform: translateY(-50%);
     cursor: pointer;
 
     .btn-line {
-      width: 30px;
-      height: 2px;
-      margin: 0 0 0.25rem 0;
-      @apply bg-secondary-80;
-    }
-  }
-
-  &.is-active {
-    // @apply justify-between;
-    @include ease-out;
-    max-width: 9999px;
-
-    .menu-items {
-      @include ease-out;
-      // position: relative;
-      // left: unset;
-      // opacity: 1;
-    }
-
-    .menu-btn {
-      transform: rotate(180deg);
-      @include ease-out;
-
-      .btn-line {
-        @include ease-out;
-        //Line 1 - Rotate
-        &:nth-child(1) {
-          transform: rotate(45deg) translate(4px, 4px);
-        }
-
-        //Line 2 - Hide
-        &:nth-child(2) {
-          opacity: 0;
-        }
-
-        //Line 3 - Rotate
-        &:nth-child(3) {
-          transform: rotate(-45deg) translate(4px, -4px);
-        }
-      }
+      @include btn-line;
     }
   }
 }
 
-// .menu-btn {
-//   // position: absolute;
-//   // z-index: 3;
-//   // right: 35px;
-//   // top: 35px;
-//   // cursor: pointer;
-//   //
-//   // .btn-line {
-//   //   width: 28px;
-//   //   height: 2px;
-//   //   margin: 0 0 0.25rem 0;
-//   //   @apply bg-secondary-80;
-//   // }
-//
-//   //Rotate Into X With Menu Lines
-//
-//   &.close {
-//     transform: rotate(180deg);
-//
-//     .btn-line {
-//       //Line 1 - Rotate
-//       &:nth-child(1) {
-//         transform: rotate(45deg) translate(5px, 5px);
-//       }
-//
-//       //Line 2 - Hide
-//       &:nth-child(2) {
-//         opacity: 0;
-//       }
-//
-//       //Line 3 - Rotate
-//       &:nth-child(3) {
-//         transform: rotate(-45deg) translate(5px, -5px);
-//       }
-//     }
-//   }
-// }
+.fullscreen-menu-container {
+  @include ease-out;
+  background-color: rgba($secondary-80, 0.8);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: -1000;
+
+  &.is-active {
+    @include ease-out;
+    transition-delay: $transition-length-default;
+    opacity: 1;
+    z-index: 2000;
+  }
+
+  @at-root #{&}__menu {
+    @apply bg-secondary-20;
+    @include ease-out;
+    transition-delay: $transition-length-default;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    transform: translatex(100%);
+
+    @include screen-sm {
+      width: 50%;
+    }
+
+    &.is-active {
+      @include ease-out;
+      transform: translateX(0);
+    }
+  }
+
+  @at-root #{&}__link {
+    @apply font-serif text-2xl text-secondary-80;
+  }
+
+  @at-root #{&}__menu-btn {
+    .btn-line {
+      @include btn-line;
+
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      //Line 3 - Rotate
+      &:nth-child(2) {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

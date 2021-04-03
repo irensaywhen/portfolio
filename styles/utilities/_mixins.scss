@@ -1,5 +1,5 @@
 @mixin ease-out {
-  transition: all 0.5s ease-out;
+  transition: all $transition-length-default ease-out;
 }
 
 @mixin screen-sm {
@@ -30,4 +30,11 @@
   @media screen and (min-width: 1536px) {
     @content;
   }
+}
+
+@mixin btn-line {
+  width: 30px;
+  height: 2px;
+  margin: 0 0 0.25rem 0;
+  @apply bg-secondary-80;
 }
