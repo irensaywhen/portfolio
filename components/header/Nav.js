@@ -1,9 +1,35 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import ActiveLink from '../ActiveLink';
 import ReactTooltip from 'react-tooltip';
 import { CopyEmailContext } from '../../context/copy-email';
 
 const Nav = ({ handleOpenMenu }) => {
+  const copyEmailContext = useContext(CopyEmailContext);
+  //  console.log(copyEmailContext);
+  // const [emailCopied, setIsEmailCopied] = useState(false);
+
+  // const resetTooltipHandler = () => setIsEmailCopied(false);
+
+  // const copyEmailHandler = () => {
+  //   setIsEmailCopied(true);
+  //   // As long as Clipborad API is not widely supported
+  //   // I decided to use old approach which includes
+  //   // creating an input element and calling document.execCommand function
+  //
+  //   var dummy = document.createElement('input');
+  //
+  //   document.body.appendChild(dummy);
+  //
+  //   dummy.setAttribute('value', 'irensaywhen@gmail.com');
+  //   dummy.select();
+  //
+  //   document.execCommand('copy');
+  //
+  //   document.body.removeChild(dummy);
+  // };
+
+  console.log(copyEmailContext);
+
   const reactTooltip = copyEmailContext.emailCopied ? (
     <ReactTooltip
       id='copyEmailTip'
