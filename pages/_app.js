@@ -1,11 +1,14 @@
 import Layout from '../components/Layout';
 import '../styles/global.scss';
+import CopyEmailContextProvider from '../context/copy-email';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <CopyEmailContextProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </CopyEmailContextProvider>
   );
 }
 
