@@ -1,7 +1,6 @@
 .menu {
   @apply flex justify-center items-center shadow-md rounded-full h-12;
   @include ease-out;
-  // max-width: 3rem;
   z-index: 1000;
   background: #fff;
   padding: 0.5rem 1rem;
@@ -16,48 +15,49 @@
   }
 }
 
-.fullscreen-menu-container {
+// Menu overlay
+.fullscreen-menu-overlay {
+  @include screen-sm {
+    background-color: rgba($secondary-80, 0.8);
+    @include ease-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    height: 100vh;
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  &.is-menu-open {
+    @include ease-out;
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Menu
+.fullscreen-menu {
+  @apply bg-secondary-20;
   @include ease-out;
-  background-color: rgba($secondary-80, 0.8);
-  width: 100vw;
-  height: 100vh;
   position: fixed;
   top: 0;
-  left: 0;
-  opacity: 0;
-  z-index: -1000;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  transform: translateX(100%);
+  z-index: 2000;
+
+  @include screen-sm {
+    width: 50%;
+  }
 
   &.is-active {
     @include ease-out;
-    transition-delay: $transition-length-default;
-    opacity: 1;
-    z-index: 2000;
+    transform: translateX(0);
   }
 
-  @at-root #{&}__menu {
-    @apply bg-secondary-20;
-    @include ease-out;
-    transition-delay: $transition-length-default;
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    transform: translatex(100%);
-
-    @include screen-sm {
-      width: 50%;
-    }
-
-    &.is-active {
-      @include ease-out;
-      transform: translateX(0);
-    }
-  }
-
-  @at-root #{&}__link {
-    @apply font-serif text-2xl text-secondary-80;
-  }
-
-  @at-root #{&}__menu-btn {
+  &__menu-btn {
     .btn-line {
       @include btn-line;
 
@@ -70,5 +70,9 @@
         transform: rotate(-45deg);
       }
     }
+  }
+
+  .btn-light-social {
+    @apply text-2xl;
   }
 }

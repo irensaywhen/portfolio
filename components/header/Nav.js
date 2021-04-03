@@ -1,8 +1,10 @@
 import ActiveLink from '../ActiveLink';
+import ReactTooltip from 'react-tooltip';
 
 const Nav = ({ handleOpenMenu }) => {
   return (
     <div className='menu w-12 lg:w-auto'>
+      <ReactTooltip />
       <ul className='menu-items hidden lg:flex justify-start items-center'>
         <li className='pl-2'>
           <ActiveLink activeClassName='active' href='/'>
@@ -10,7 +12,12 @@ const Nav = ({ handleOpenMenu }) => {
           </ActiveLink>
         </li>
         <li>
-          <button className='btn btn-sm btn-light'>contact</button>
+          <button
+            className='btn btn-sm btn-light-social'
+            data-tip='hello world'
+          >
+            <i className='fas fa-envelope'></i>
+          </button>
         </li>
         <li>
           <a
