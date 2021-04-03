@@ -1,12 +1,9 @@
 import React, { useContext } from 'react';
-import ActiveLink from '../ActiveLink';
 import ReactTooltip from 'react-tooltip';
 import { CopyEmailContext } from '../../context/copy-email';
 
 const Nav = ({ handleOpenMenu }) => {
   const copyEmailContext = useContext(CopyEmailContext);
-
-  console.log(copyEmailContext);
 
   const reactTooltip = copyEmailContext.emailCopied ? (
     <ReactTooltip
@@ -41,11 +38,7 @@ const Nav = ({ handleOpenMenu }) => {
             className='btn btn-sm btn-light-social'
             data-tip
             data-for='copyEmailTip'
-            onClick={() => {
-              console.log('Copying email ');
-              console.log(copyEmailContext);
-              copyEmailContext.copyEmailHandler();
-            }}
+            onClick={() => copyEmailContext.copyEmailHandler()}
           >
             <i className='fas fa-envelope'></i>
           </button>

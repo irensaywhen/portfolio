@@ -12,6 +12,7 @@ const CopyEmailContextProvider = ({ children }) => {
   const resetTooltipHandler = () => setIsEmailCopied(false);
 
   const copyEmailHandler = () => {
+    console.log('Sopying email');
     setIsEmailCopied(true);
     // As long as Clipborad API is not widely supported
     // I decided to use old approach which includes

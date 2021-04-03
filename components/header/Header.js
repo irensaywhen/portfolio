@@ -9,7 +9,6 @@ const Header = () => {
   const handleOpenMenu = () => setIsMenuOpen(true);
   const handleCloseMenu = () => setIsMenuOpen(false);
 
-  console.log(isMenuOpen);
   return (
     <>
       <header className='w-full py-2 fixed top-0 bg-transparent z-50'>

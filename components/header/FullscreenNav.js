@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ActiveLink from '../ActiveLink';
 import ReactTooltip from 'react-tooltip';
+import { CopyEmailContext } from '../../context/copy-email';
 
 const FullscreenNav = ({ isMenuOpen, handleCloseMenu }) => {
   const menuClasses = [
@@ -12,8 +13,36 @@ const FullscreenNav = ({ isMenuOpen, handleCloseMenu }) => {
     'fullscreen-menu-overlay cursor-pointer',
     isMenuOpen ? 'is-menu-open' : null,
   ];
+
+  const copyEmailContext = useContext(CopyEmailContext);
+
+  const reactTooltip = copyEmailContext.emailCopied ? (
+    <ReactTooltip
+      id='copyEmail'
+      className='react-tooltip'
+      place='bottom'
+      afterHide={copyEmailContext.resetTooltipHandler}
+      backgroundColor='#C1272D'
+      textColor='#F7F7F7'
+      effect='solid'
+    >
+      Email copied!
+    </ReactTooltip>
+  ) : (
+    <ReactTooltip
+      id='copyEmail'
+      className='react-tooltip'
+      place='bottom'
+      backgroundColor='#2B2B2B'
+      textColor='#F7F7F7'
+      effect='solid'
+    >
+      Copy email
+    </ReactTooltip>
+  );
   return (
     <>
+      {reactTooltip}
       <div className={overlayClasses.join(' ')} onClick={handleCloseMenu}></div>
       <div className={menuClasses.join(' ')}>
         <div
@@ -38,7 +67,12 @@ const FullscreenNav = ({ isMenuOpen, handleCloseMenu }) => {
             </a>
           </li>
           <li>
-            <button className='btn btn-default btn-light-social'>
+            <button
+              className='btn btn-default btn-light-social'
+              data-tip
+              data-for='copyEmail'
+              onClick={() => copyEmailContext.copyEmailHandler()}
+            >
               <i className='fas fa-envelope'></i>
             </button>
             <a
